@@ -1,0 +1,15 @@
+.wrap{
+    overflow: hidden;
+    min-height: 100%;
+}
+.container{
+    max-width: 1390px;
+    min-width: 290px;
+    margin: 0 auto;
+    padding: 0px 15px;
+}
+body{
+    @include montserrat();
+    background-color: #f1f5ff;
+
+}

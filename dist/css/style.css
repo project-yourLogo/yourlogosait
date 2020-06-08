@@ -1,0 +1,269 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
+.wrap {
+  overflow: hidden;
+  min-height: 100%;
+}
+
+.container {
+  max-width: 1390px;
+  min-width: 290px;
+  margin: 0 auto;
+  padding: 0px 15px;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f1f5ff;
+}
+
+/**
+ * Сброс стилей
+ **/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+input {
+  outline: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  position: relative;
+  z-index: 3;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  z-index: 2;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 57px;
+}
+
+.header__logo {
+  display: block;
+  position: relative;
+  z-index: 4;
+}
+
+.header__menu {
+  flex-basis: 53.2%;
+  transition: 0.2s ease all;
+}
+
+.header__menu.active {
+  top: 0;
+  transition: 0.2s ease all;
+}
+
+.header__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.header__list li {
+  margin-right: 7px;
+}
+
+.header__list li:last-child {
+  margin-right: 0;
+}
+
+.header__list .sing-up {
+  background-color: #6487DF;
+  font-size: 18px;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  width: 165px;
+  color: #ffffff;
+  padding: 10px 0px;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.header__item {
+  text-decoration: none;
+  font-size: 18px;
+  color: #000000;
+  font-weight: 500;
+  transition: 0.2s ease all;
+}
+
+.header__item:hover {
+  color: #6487DF;
+  transition: 0.2s ease all;
+}
+
+.header__burger {
+  display: none;
+  width: 40px;
+  height: 30px;
+  position: relative;
+}
+
+.header__burger::before, .header__burger::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: #6487DF;
+  transition: 0.2s ease all;
+}
+
+.header__burger::after {
+  bottom: 0;
+}
+
+.header__burger::before {
+  top: 0;
+}
+
+.header__burger span {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  top: 13px;
+  background-color: #6487DF;
+  transition: 0.2s ease all;
+}
+
+.header__burger.active::before {
+  transform: rotate(45deg);
+  top: 14px;
+  transition: 0.2s ease all;
+}
+
+.header__burger.active::after {
+  transform: rotate(-45deg);
+  bottom: 12px;
+  transition: 0.2s ease all;
+}
+
+.header__burger.active span {
+  transform: scale(0);
+  transition: 0.2s ease all;
+}
+
+@media (max-width: 1150px) {
+  .header__menu {
+    flex-basis: 63%;
+  }
+}
+
+@media (max-width: 950px) {
+  .header__menu {
+    flex-basis: 65%;
+  }
+  .header__list .sing-up {
+    font-size: 15px;
+    width: 120px;
+  }
+  .header__item {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header__menu {
+    position: fixed;
+    top: calc(-100% - 80px);
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    padding: 80px 0 0 0;
+  }
+  .header__list {
+    display: block;
+    text-align: center;
+  }
+  .header__list li {
+    margin-bottom: 15px;
+  }
+  .header__list .sing-up {
+    margin: 0 auto;
+    font-size: 23px;
+    width: 170px;
+  }
+  .header__item {
+    font-size: 23px;
+  }
+  .header__burger {
+    display: block;
+    position: relative;
+    z-index: 3;
+  }
+}

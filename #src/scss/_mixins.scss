@@ -1,0 +1,17 @@
+@mixin montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+@mixin btn($bg:#6487DF, $fs: 18px, $ls:2px, $br: 5px, $w: 165px, $clr:#ffffff){
+    background-color:$bg;
+    font-size: $fs;
+    letter-spacing:$ls;
+    border-radius: $br;
+    width: $w;
+    color: $clr;
+    padding: 10px 0px;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    @content;
+}
